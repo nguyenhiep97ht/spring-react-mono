@@ -21,7 +21,7 @@ function NavLink({ icon, path, title }: PropsWithChildren<NavLinkProps>) {
   return (
     <NavItem
       path={href}
-      onClick={(e) => {
+      onClick={(e: any) => {
         e.preventDefault();
         navigate(path);
       }}
@@ -48,9 +48,6 @@ export default function MenuOnLeftLayout() {
   return (
     <LocationContext.Provider value={context}>
       <AppLayout className={cn('block', 'h-full')} primarySection="drawer">
-        <header slot="drawer">
-          <h1 className="text-l m-0">{state.appName}</h1>
-        </header>
         <Scroller slot="drawer" scroll-direction="vertical">
           <Nav aria-label={state.appName}>
             {Object.entries(views).map(([path, info]) => (
