@@ -28,6 +28,7 @@
       "@vaadin/flow-frontend/*": ["generated/jar-resources/*"],
       "Frontend/*": ["*"]
     }
+    // "lib": ["es2020.String"]
   },
   "include": ["frontend/**/*", "types.d.ts"],
   "exclude": []

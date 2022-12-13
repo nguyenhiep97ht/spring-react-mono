@@ -12,11 +12,15 @@ interface Props {
 export function Button({ type, children, loading, disable, rightIcon, leftIcon }: Props) {
   return (
     <button type={type} disabled={disable} className="button button-primary">
-      <span>
-        {leftIcon ? leftIcon : undefined}
-        {loading ? <div className="loader"></div> : children}
-        {rightIcon ? rightIcon : undefined}
-      </span>
+      {loading ? (
+        <div className="loader"></div>
+      ) : (
+        <span className="flex items-cetner">
+          {leftIcon ? leftIcon : undefined}
+          {children}
+          {rightIcon ? rightIcon : undefined}
+        </span>
+      )}
     </button>
   );
 }
